@@ -76,5 +76,44 @@ public class BankTest extends TestBase {
                     .shouldBe(visible);
         });
     }
+
+    @DisplayName("Login to the bank using an incomplete phone number")
+    @Test
+    public void loginInBankUseIncompletePhoneNumber() {
+
+        step("Open bank website", () -> {
+            open("");
+        });
+        step("Click on the buttons", () -> {
+            $("[data-test='loginButton']").hover();
+            String originalWindow = WebDriverRunner.getWebDriver().getWindowHandle();
+            $("[data-test='clickableArea login-first']")
+                    .shouldBe(visible)
+                    .shouldBe(enabled)
+                    .shouldBe(interactable)
+                    .click();
+
+            new WebDriverWait(WebDriverRunner.getWebDriver(), Duration.ofSeconds(5))
+                    .until(ExpectedConditions.numberOfWindowsToBe(2));
+            Set<String> allWindows = WebDriverRunner.getWebDriver().getWindowHandles();
+            String newWindow = null;
+            for (String handle : allWindows) {
+                if (!handle.equals(originalWindow)) {
+                    newWindow = handle;
+                    break;
+                }
+            }
+            if (newWindow == null) {
+                throw new NoSuchWindowException("Новая вкладка не обнаружена!");
+            }
+            WebDriverRunner.getWebDriver().switchTo().window(newWindow);
+            $("[automation-id='phone-input']").setValue("+7 (922) 222-22-2");
+            $("[automation-id='button-submit']").click();
+        });
+        step("Verify results text", () -> {
+            $("[automation-id='server-error']").shouldHave(text("Введен неверный номер телефона"));
+
+        });
+    }
 }
 
