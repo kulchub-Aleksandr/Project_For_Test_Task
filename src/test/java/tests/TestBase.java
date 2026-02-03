@@ -17,9 +17,9 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
-        String browser = System.getProperty("browser");
+        String browser = System.getProperty("browser", "chrome");
         String browserVersion = System.getProperty("browserVersion");
-        String baseUrl = System.getProperty("baseUrl");
+        String baseUrl = System.getProperty("baseUrl", "https://finance.ozon.ru");
         String remoteUrl = System.getProperty("remoteUrl");
         String browserSize = System.getProperty("browserSize");
 
