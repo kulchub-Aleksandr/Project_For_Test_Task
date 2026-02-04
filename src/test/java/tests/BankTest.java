@@ -115,5 +115,49 @@ public class BankTest extends TestBase {
 
         });
     }
+
+    @DisplayName("Choose coverage of bank ")
+    @Test
+    public void coverageInBank() {
+        step("Open bank website", () -> {
+            open("");
+        });
+        step("Click on the buttons", () -> {
+            $("[data-test='menu-item-0-title']").hover();
+            $("[data-test='clickableArea text-item-3-0']")
+                    .shouldBe(visible)
+                    .shouldBe(enabled)
+                    .shouldBe(interactable)
+                    .click();
+        });
+        step("Verify results text", () -> {
+            $$("[data-test='htmlTag title']")
+                    .findBy(text("Познакомьтесь со всеми обновлениями приложения "))
+                    .shouldBe(visible);
+        });
+    }
+
+    @DisplayName("Choose fuel page in website of bank ")
+    @Test
+    public void fuelInBank() {
+        step("Open bank website", () -> {
+            open("");
+        });
+        step("Click on the buttons", () -> {
+            $("[data-test='menu-item-0-title']").hover();
+            $("[data-test='clickableArea text-item-5-2']")
+                    .shouldBe(visible)
+                    .shouldBe(enabled)
+                    .shouldBe(interactable)
+                    .click();
+        });
+        step("Verify results text", () -> {
+            $$("[data-test='htmlTag title']")
+                    .findBy(text("Топливо с кэшбэком до 7% в приложении Т‑Банка"))
+                    .shouldBe(visible);
+        });
+    }
+
+
 }
 
