@@ -130,7 +130,7 @@ src="images/screens/JenkinsBuild_1.png">
 <img title="Jira Task" src="images/screens/jiraTask.png">
 </p>
 
-## <img src="images/logo/Telegram.svg" title="Allure TestOps" width="7%"/> Уведомления в Telegram с использованием бота
+## <img src="images/logo/Telegram.svg" title="Allure TestOps" width="7%"/> Уведомления в Telegram
 
 После завершения сборки, бот созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с результатом пройденных тестов.
 
