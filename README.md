@@ -1,14 +1,26 @@
 # Проект по автоматизации тестовых сценариев для Т-Банка
 ## :card_index_dividers: Содержание:
 
-- [Использованный стек технологий и инструментов](#computer-Использованный-стек-технологий-и-инструментов)
-- [Запуск автотестов](#arrow_forward-запуск-автотестов)
-- [Сборка в Jenkins](#-сборка-в-jenkins)
-- [Пример Allure-отчета](#-пример-allure-отчета)
-- [Интеграция с Allure TestOps](#-интеграция-с-allure-testOps)
-- [Интеграция с Jira](#-интеграция-с-jira)
-- [Уведомления в Telegram](#-уведомления-в-telegram)
-- [Видео примера запуска тестов в Selenoid](#-видео-примера-запуска-теста-в-selenoid)
+- [Проект по автоматизации тестовых сценариев для Т-Банка](#проект-по-автоматизации-тестовых-сценариев-для-т-банка)
+  - [:card\_index\_dividers: Содержание:](#card_index_dividers-содержание)
+  - [:computer: Использованный стек технологий и инструментов](#computer-использованный-стек-технологий-и-инструментов)
+  - [:arrow\_forward: Запуск автотестов](#arrow_forward-запуск-автотестов)
+    - [Локальный запуск тестов из терминала](#локальный-запуск-тестов-из-терминала)
+    - [Удалённый запуск осуществляется через Jenkins](#удалённый-запуск-осуществляется-через-jenkins)
+    - [Параметры сборки](#параметры-сборки)
+  - [ Сборка в Jenkins](#-сборка-в-jenkins)
+    - [Главная страница](#главная-страница)
+    - [Страница запуска с возможностью изменить параметры](#страница-запуска-с-возможностью-изменить-параметры)
+  - [ Allure Report](#-allure-report)
+    - [Overview](#overview)
+    - [Результат выполнения теста / Тест-кейсы](#результат-выполнения-теста--тест-кейсы)
+    - [*Графики*](#графики)
+  - [ Интеграция с Allure TestOps](#-интеграция-с-allure-testops)
+    - [Dashboard](#dashboard)
+    - [Результат выполнения автотеста](#результат-выполнения-автотеста)
+  - [ Интеграция с Jira](#-интеграция-с-jira)
+  - [ Уведомления в Telegram с использованием бота](#-уведомления-в-telegram-с-использованием-бота)
+  - [ Видео примера запуска тестов в Selenoid](#-видео-примера-запуска-тестов-в-selenoid)
 
 
 
@@ -29,11 +41,11 @@
 <img width="5%" title="Jira" src="images/logo/Jira.svg">
 </p>
 
-- В данном проекте автотесты написаны на языке <code>Java</code> с использованием фреймворка для автоматизации тестирования веб‑приложений [Selenide](https://selenide.org/).
-- В качестве сборщика был использован - <code>Gradle</code>.
+- В данном проекте автотесты написаны на языке <code>Java</code> с использованием фреймворка для автоматизации тестирования веб‑приложений [Selenide](https://selenide.org/). 
+- В качестве сборщика был использован - <code>Gradle</code>.  
 - В качестве фреймворка модульного тестирования задействован <code>JUnit 5</code>.
 - При прогоне тестов браузер запускается в [Selenoid](https://aerokube.com/selenoid/).
-- Для удаленного запуска реализована джоба в **Jenkins** с формированием Allure-отчета и отправкой результатов в **Telegram** при помощи бота.
+- Для удаленного запуска реализована джоба в **Jenkins** с формированием Allure-отчета и отправкой результатов в **Telegram** при помощи бота. 
 - Осуществлена интеграция с **Allure TestOps** и **Jira**
 
 Содержание Allure-отчета:
@@ -67,10 +79,80 @@ main -DremoteUrl=${SELENOID_URL}
 * <code>BROWSER_NAME</code> – браузер, в котором будут выполняться тесты. По-умолчанию - <code>chrome</code>.
 * <code>BROWSER_VERSION</code> – версия браузера, в которой будут выполняться тесты. По-умолчанию - <code>100.0</code>.
 * <code>BROWSER_SIZE</code> – размер окна браузера, в котором будут выполняться тесты. По-умолчанию - <code>1920x1080</code>.
-* <code>BASE_URL</code> – Url, по которому будет открываться тестируемое приложение.
+* <code>BASE_URL</code> – Url, по которому будет открываться тестируемое приложение. 
 * <code>REMOTE_BROWSER_URL</code> – адрес удаленного сервера, на котором будут запускаться тесты.
 
-## <img src="images/logo/Jenkins.svg" title="Jenkins" width="4%"/> Сборка в Jenkins
+## <img src="images/logo/Jenkins.svg" title="Jenkins" width="5%"/> Сборка в [Jenkins](https://jenkins.autotests.cloud/job/Kod3ik_qa_guru_x5/)
+### Главная страница
 <p align="center">
-<img title="Jenkins Build" src="images/screens/JenkinsBuild.png">
+<img title="Jenkins Build" 
+src="images/screens/JenkinsBuild_0.png">
+</p>
+
+### Страница запуска с возможностью изменить параметры
+<p align="center">
+<img title="Jenkins Build" 
+src="images/screens/JenkinsBuild_1.png">
+</p>
+
+## <img src="images/logo/Allure_Report.svg" title="Allure Report" width="5%"/> Allure [Report](https://jenkins.autotests.cloud/job/Kod3ik_qa_guru_x5/allure/)
+
+### Overview
+
+<p align="center">
+<img title="Allure Overview" src="images/screens/allureReport.png">
+</p>
+
+### Результат выполнения теста / Тест-кейсы
+
+<p align="center">
+<img title="Test Results in Alure" src="images/screens/ResultTest.png">
+</p>
+
+### *Графики*
+
+  <p align="center">  
+<img title="Allure Graphics" src="images/screen/allure_graths.png" width="850">
+
+<p align="center">
+<img title="Allure Graphics" src="images/screen/graphs.png" width="850">  
+</p>
+
+## <img src="images/logo/AllureTestOps.svg" title="Allure TestOps" width="5%"/> Интеграция с [Allure TestOps](https://allure.autotests.cloud/project/5108/dashboards)
+
+Результаты выполнения автотестов в сборке <code>Jenkins</code> передаются в <code>Allure TestOps</code>
+
+На Dashboard в <code>Allure TestOps</code> отображена статистика пройденных тестов.
+
+### Dashboard
+<p align="center">
+<img title="Allure TestOps DashBoard" src="images/screens/allureTestOpsDashBoard.png">
+</p>
+
+### Результат выполнения автотеста
+<p align="center">
+<img title="Allure TestOps Tests" src="images/screens/allureTestOpsTest.png">
+</p>
+
+## <img src="images/logo/Jira.svg" title="Allure TestOps" width="6%"/> Интеграция с [Jira](https://jira.autotests.cloud/browse/HOMEWORK-1574)
+
+Реализована интеграция <code>Allure TestOps</code> с <code>Jira</code>, в тикете отображается информация, какие тест-кейсы были написаны в рамках задачи и результат их прогона.
+
+<p align="center">
+<img title="Jira Task" src="images/screens/jiraTask.png">
+</p>
+
+## <img src="images/logo/Telegram.svg" title="Allure TestOps" width="7%"/> Уведомления в Telegram с использованием бота
+
+После завершения сборки, бот созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с результатом пройденных тестов.
+
+<p align="center">
+<img width="70%" title="Telegram Notifications" src="images/screens/notification.png">
+</p>
+
+## <img src="images/logo/Selenoid.svg" title="Allure TestOps" width="5%"/> Видео примера запуска тестов в Selenoid
+
+К каждому тесту в отчете прилагается видео прогона.
+<p align="center">
+  <img title="Selenoid Video" src="media/screens/video.gif">
 </p>
