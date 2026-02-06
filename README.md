@@ -34,7 +34,25 @@
 - Для удаленного запуска реализована джоба в **Jenkins** с формированием Allure-отчета и отправкой результатов в **Telegram** при помощи бота.
 - Осуществлена интеграция с **Allure TestOps** и **Jira**
 
+### Реализована следующая схема взаимодействия технологий и инструментов
 
+``` mermaid
+flowchart LR;
+    A(IntelliJ IDEA
+     Java
+     Selenide
+    Gradle
+    JUnit 5)-->B(GitHub);
+    B-->C(Jenkins);
+    C-->D(Telegram);
+    C<==>E(Selenoid);
+    
+    C-->G(Allure_Report);
+    
+    C-->F(Allure_TestOps);
+    F-->J(Jira);
+
+```
 
 ## :arrow_forward: Запуск автотестов
 
@@ -153,27 +171,3 @@ src="images/screen/JenkinsBuild_1.png">
   <img title="Selenoid Video" src="images/video/Video_MD.gif">
 </p>
 
-``` mermaid
-flowchart TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-```
-
-```mermaid
-flowchart TB
-  A(<img width="6%" src="images/logo/Intelij_IDEA.svg">)
-```
-
-```mermaid
-flowchart LR
-classDef class1 fill:#7FFFD4, stroke:#000, stroke-width:4px
-A( ЧТО <img width="6%" title="IntelliJ IDEA" src="images/logo/Intelij_IDEA.svg"><img width="6%" title="IntelliJ IDEA" src="images/logo/Intelij_IDEA.svg"> что)
-    B{{Диаграмма динамическая?}}
-    A<--->B
-    B--Да-->C([Лучше воспользоваться Mermaid.js]):::class1 
-    B--Нет-->D([Можно просто нарисовать и вставить с помощью Markdown]):::class1
-
-  node1[<img width="6%" title="IntelliJ IDEA" src="images/logo/Intelij_IDEA.svg">]
-```
