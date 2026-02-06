@@ -1,18 +1,16 @@
 # Проект по автоматизации тестовых сценариев для Т-Банка
 ## :card_index_dividers: Содержание:
 
-- [Использованный стек технологий и инструментов](#computer-Использованный-стек-технологий-и-инструментов)
+- [Использованный стек технологий и инструментов](#tech-stack)
 - [Запуск автотестов](#arrow_forward-запуск-автотестов)
 - [Сборка в Jenkins](#-сборка-в-jenkins)
-- [Allure Report](#-Allure-Report)
-- [Интеграция с Allure TestOps](#-интеграция-с-allure-testOps)
+- [Allure Report](#-allure-report)
+- [Интеграция с Allure TestOps](#-интеграция-с-allure-testops)  
 - [Интеграция с Jira](#-интеграция-с-jira)
-- [Уведомления в Telegram](#-уведомления-в-Telegram)
-- [Видео примера запуска тестов в Selenoid](#-видео-примера-запуска-тестов-в-Selenoid)
+- [Уведомления в Telegram](#-уведомления-в-telegram)
+- [Видео примера запуска тестов в Selenoid](#-видео-примера-запуска-тестов-в-selenoid)
 
-
-
-## :computer: Использованный стек технологий и инструментов
+## <span id="tech-stack"> :computer: Использованный стек технологий и инструментов
 
 <p align="center">
 <img width="6%" title="IntelliJ IDEA" src="images/logo/Intelij_IDEA.svg">
@@ -36,16 +34,12 @@
 - Для удаленного запуска реализована джоба в **Jenkins** с формированием Allure-отчета и отправкой результатов в **Telegram** при помощи бота.
 - Осуществлена интеграция с **Allure TestOps** и **Jira**
 
-Содержание Allure-отчета:
-* Шаги теста;
-* Скриншот страницы на последнем шаге;
-* Page Source;
-* Логи браузерной консоли;
-* Видео выполнения автотеста.
+
 
 ## :arrow_forward: Запуск автотестов
 
 ### Локальный запуск тестов из терминала
+
 ```bash
 ./gradlew clean test
 ```
@@ -56,54 +50,64 @@
 
 ```bash
 clean
-main -DremoteUrl=${SELENOID_URL}
+test
+-DremoteUrl=${SELENOID_URL}
 -DbaseUrl=${BASE_URL}
 -DbrowserSize=${BROWSER_SIZE}
 -Dbrowser=${BROWSER_NAME}
 -Dbrowser_version="${BROWSER_VERSION}"
 ```
+
 ### Параметры сборки
 
-* <code>BROWSER_NAME</code> – браузер, в котором будут выполняться тесты. По-умолчанию - <code>chrome</code>.
-* <code>BROWSER_VERSION</code> – версия браузера, в которой будут выполняться тесты. По-умолчанию - <code>100.0</code>.
-* <code>BROWSER_SIZE</code> – размер окна браузера, в котором будут выполняться тесты. По-умолчанию - <code>1920x1080</code>.
-* <code>BASE_URL</code> – Url, по которому будет открываться тестируемое приложение.
-* <code>REMOTE_BROWSER_URL</code> – адрес удаленного сервера, на котором будут запускаться тесты.
+- <code>BROWSER_NAME</code> – браузер, в котором будут выполняться тесты.
+- <code>BROWSER_VERSION</code> – версия браузера, в которой будут выполняться тесты.
+- <code>BROWSER_SIZE</code> – размер окна браузера, в котором будут выполняться тесты.
+- <code>BASE_URL</code> – Url, по которому будет открываться тестируемое приложение.
+- <code>REMOTE_BROWSER_URL</code> – адрес удаленного сервера, на котором будут запускаться тесты.
 
 ## <img src="images/logo/Jenkins.svg" title="Jenkins" width="5%"/> Сборка в [Jenkins](https://jenkins.autotests.cloud/job/Kod3ik_qa_guru_x5/)
 ### Главная страница
 <p align="center">
 <img title="Jenkins Build" 
-src="images/screens/JenkinsBuild_0.png">
+src="images/screen/JenkinsBuild_0.png">
 </p>
 
 ### Страница запуска с возможностью изменить параметры
 <p align="center">
 <img title="Jenkins Build" 
-src="images/screens/JenkinsBuild_1.png">
+src="images/screen/JenkinsBuild_1.png">
 </p>
 
 ## <img src="images/logo/Allure_Report.svg" title="Allure Report" width="5%"/> Allure [Report](https://jenkins.autotests.cloud/job/Kod3ik_qa_guru_x5/allure/)
 
+Содержание Allure-отчета:
+
+- Шаги теста;
+- Скриншот страницы на последнем шаге;
+- Page Source;
+- Логи браузерной консоли;
+- Видео выполнения автотеста.
+
 ### Overview
 
 <p align="center">
-<img title="Allure Overview" src="images/screens/allureReport.png">
+<img title="Allure Overview" src="images/screen/Allure_0.png">
 </p>
 
 ### Результат выполнения теста / Тест-кейсы
 
 <p align="center">
-<img title="Test Results in Alure" src="images/screens/ResultTest.png">
+<img title="Test Results in Alure" src="images/screen/Allure_1.png">
 </p>
 
 ### *Графики*
 
   <p align="center">  
-<img title="Allure Graphics" src="images/screen/allure_graths.png" width="850">
+<img title="Allure Graphics" src="images/screen/Allure_2.png" width="850">
 
 <p align="center">
-<img title="Allure Graphics" src="images/screen/graphs.png" width="850">  
+<img title="Allure Graphics" src="images/screen/Allure_3.png" width="850">  
 </p>
 
 ## <img src="images/logo/AllureTestOps.svg" title="Allure TestOps" width="5%"/> Интеграция с [Allure TestOps](https://allure.autotests.cloud/project/5108/dashboards)
@@ -144,3 +148,29 @@ src="images/screens/JenkinsBuild_1.png">
 <p align="center">
   <img title="Selenoid Video" src="images/video.gif">
 </p>
+
+
+
+::: mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+:::
+
+```mermaid
+flowchart TB
+  node1[<img width="6%" title="IntelliJ IDEA" src="images/logo/Intelij_IDEA.svg">]
+```
+```mermaid
+flowchart LR
+classDef class1 fill:#7FFFD4, stroke:#000, stroke-width:4px
+A([<img width="6%" title="IntelliJ IDEA" src="images/logo/Intelij_IDEA.svg"><img width="6%" title="IntelliJ IDEA" src="images/logo/Intelij_IDEA.svg">])
+    B{Диаграмма динамическая?}
+    A<--->B
+    B--Да-->C([Лучше воспользоваться Mermaid.js]):::class1 
+    B--Нет-->D([Можно просто нарисовать и вставить с помощью Markdown]):::class1
+
+  node1[<img width="6%" title="IntelliJ IDEA" src="images/logo/Intelij_IDEA.svg">]
+```
