@@ -66,7 +66,7 @@ test
 - <code>BASE_URL</code> – Url, по которому будет открываться тестируемое приложение.
 - <code>REMOTE_BROWSER_URL</code> – адрес удаленного сервера, на котором будут запускаться тесты.
 
-## <img src="images/logo/Jenkins.svg" title="Jenkins" width="5%"/> Сборка в [Jenkins](https://jenkins.autotests.cloud/job/Kod3ik_qa_guru_x5/)
+## <img src="images/logo/Jenkins.svg" title="Jenkins" width="5%"/> Сборка в [Jenkins](https://jenkins.autotests.cloud/view/java_students/job/C39_AleksKulch_lesson14_29.01.26_Test_Task/)
 ### Главная страница
 <p align="center">
 <img title="Jenkins Build" 
@@ -79,7 +79,7 @@ src="images/screen/JenkinsBuild_0.png">
 src="images/screen/JenkinsBuild_1.png">
 </p>
 
-## <img src="images/logo/Allure_Report.svg" title="Allure Report" width="5%"/> Allure [Report](https://jenkins.autotests.cloud/job/Kod3ik_qa_guru_x5/allure/)
+## <img src="images/logo/Allure_Report.svg" title="Allure Report" width="5%"/> Allure [Report](https://jenkins.autotests.cloud/view/java_students/job/C39_AleksKulch_lesson14_29.01.26_Test_Task/allure/)
 
 Содержание Allure-отчета:
 
