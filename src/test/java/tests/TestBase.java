@@ -8,12 +8,15 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import pages.PageWebSite;
 
 import java.util.Map;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 
 public class TestBase {
+
+    PageWebSite steps = new PageWebSite();
 
     @BeforeAll
     static void beforeAll() {
@@ -27,9 +30,9 @@ public class TestBase {
         Configuration.baseUrl = baseUrl;
         Configuration.browser = browser;
         Configuration.browserVersion = browserVersion;
-        //Configuration.pageLoadStrategy = "eager";
+        Configuration.pageLoadStrategy = "eager";
         //Configuration.holdBrowserOpen = true;
-        //Configuration.timeout = 10000; // default 4000
+        Configuration.timeout = 10000; // default 4000
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(

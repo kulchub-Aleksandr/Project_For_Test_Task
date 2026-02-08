@@ -17,49 +17,28 @@ import static io.qameta.allure.Allure.step;
 
 public class BankTest extends TestBase {
 
-    @DisplayName("Login to the bank's personal account")
+    @DisplayName("Вход в личный кабинет банка")
     @Test
     public void loginInBank() {
-
-        step("Open bank website", () -> {
-            open("");
+        step("Открытие веб-сайта банка", () -> {
+            steps.openWebSite();
         });
-        step("Click on the buttons", () -> {
-            $("[data-test='loginButton']").hover();
-            String originalWindow = WebDriverRunner.getWebDriver().getWindowHandle();
-            $("[data-test='clickableArea login-first']")
-                    .shouldBe(visible)
-                    .shouldBe(enabled)
-                    .shouldBe(interactable)
-                    .click();
-
-            new WebDriverWait(WebDriverRunner.getWebDriver(), Duration.ofSeconds(5))
-                    .until(ExpectedConditions.numberOfWindowsToBe(2));
-            Set<String> allWindows = WebDriverRunner.getWebDriver().getWindowHandles();
-            String newWindow = null;
-            for (String handle : allWindows) {
-                if (!handle.equals(originalWindow)) {
-                    newWindow = handle;
-                    break;
-                }
-            }
-            if (newWindow == null) {
-                throw new NoSuchWindowException("Новая вкладка не обнаружена!");
-            }
-            WebDriverRunner.getWebDriver().switchTo().window(newWindow);
+        step("Прожатие на соответствующие кнопки", () -> {
+            steps.hoverLoginButton();
+            steps.loginFirstButton();
         });
-        step("Verify results text", () -> {
-            $("[automation-id='form-title']").shouldHave(text("Вход в Т‑Банк"));
+        step("Проверка появления соответствующего текста на странице", () -> {
+            steps.formTitleValue();
 
         });
     }
 
-    @DisplayName("Choose credit of bank")
+    @DisplayName("Выбор кредита в банке")
     @Test
     public void chooseCredit() {
 
         step("Open bank website", () -> {
-            open("");
+            open("https://www.tbank.ru/");
         });
         step("Click on the button", () -> {
 
@@ -77,46 +56,24 @@ public class BankTest extends TestBase {
         });
     }
 
-    @DisplayName("Login to the bank using an incomplete phone number")
+    @DisplayName("Вход в личный кабинет банка, используя неполный номер телефона")
     @Test
     public void loginInBankUseIncompletePhoneNumber() {
-
-        step("Open bank website", () -> {
-            open("");
+        step("Открытие веб-сайта банка", () -> {
+            steps.openWebSite();
         });
-        step("Click on the buttons", () -> {
-            $("[data-test='loginButton']").hover();
-            String originalWindow = WebDriverRunner.getWebDriver().getWindowHandle();
-            $("[data-test='clickableArea login-first']")
-                    .shouldBe(visible)
-                    .shouldBe(enabled)
-                    .shouldBe(interactable)
-                    .click();
-
-            new WebDriverWait(WebDriverRunner.getWebDriver(), Duration.ofSeconds(5))
-                    .until(ExpectedConditions.numberOfWindowsToBe(2));
-            Set<String> allWindows = WebDriverRunner.getWebDriver().getWindowHandles();
-            String newWindow = null;
-            for (String handle : allWindows) {
-                if (!handle.equals(originalWindow)) {
-                    newWindow = handle;
-                    break;
-                }
-            }
-            if (newWindow == null) {
-                throw new NoSuchWindowException("Новая вкладка не обнаружена!");
-            }
-            WebDriverRunner.getWebDriver().switchTo().window(newWindow);
-            $("[automation-id='phone-input']").setValue("+7 (922) 222-22-2");
-            $("[automation-id='button-submit']").click();
+        step("Прожатие на соответствующие кнопки", () -> {
+            steps.hoverLoginButton();
+            steps.loginFirstButton();
+            steps.setPhone();
         });
-        step("Verify results text", () -> {
-            $("[automation-id='server-error']").shouldHave(text("Введен неверный номер телефона"));
+        step("Проверка появления соответствующего текста на странице", () -> {
+            steps.errorValue();
 
         });
     }
 
-    @DisplayName("Choose coverage of bank ")
+    @DisplayName("Выбор страховки в банке")
     @Test
     public void coverageInBank() {
         step("Open bank website", () -> {
@@ -137,7 +94,7 @@ public class BankTest extends TestBase {
         });
     }
 
-    @DisplayName("Choose fuel page in website of bank ")
+    @DisplayName("Выбор страницы Топливо на веб-сайте банка")
     @Test
     public void fuelInBank() {
         step("Open bank website", () -> {
