@@ -22,7 +22,7 @@ public class TestBase {
     static void beforeAll() {
         String browser = System.getProperty("browser", "chrome");
         String browserVersion = System.getProperty("browserVersion");
-        String baseUrl = System.getProperty("baseUrl", "https://www.tbank.ru/");
+        String baseUrl = System.getProperty("baseUrl", "https://www.tbank.ru");
         String remoteUrl = System.getProperty("remoteUrl");
         String browserSize = System.getProperty("browserSize");
 
@@ -30,9 +30,9 @@ public class TestBase {
         Configuration.baseUrl = baseUrl;
         Configuration.browser = browser;
         Configuration.browserVersion = browserVersion;
-        Configuration.pageLoadStrategy = "eager";
-        //Configuration.holdBrowserOpen = true;
-        Configuration.timeout = 10000; // default 4000
+        //Configuration.pageLoadStrategy = "eager";
+//        Configuration.holdBrowserOpen = true;
+        //Configuration.timeout = 10000; // default 4000
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
