@@ -7,5 +7,5 @@ import java.util.Locale;
 public class TestData {
 
     Faker faker = new Faker(new Locale("en"));
-    public String notFullUserNumber = faker.phoneNumber().subscriberNumber(9);
+    public String notFullUserNumber = "9" + faker.phoneNumber().subscriberNumber(8);
 }
