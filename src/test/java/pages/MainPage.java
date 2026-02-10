@@ -25,8 +25,7 @@ public class MainPage {
 
 
     private final ElementsCollection
-            htmlTagTitleCredits = $$("[data-test='htmlTag title']")
-            .filterBy(exactText("Кредиты"));
+            htmlTagTitleCredits = $$("[data-test='htmlTag title']");
 
     @Step("Открытие первой страницы сайта")
     public MainPage openPage() {
@@ -64,9 +63,10 @@ public class MainPage {
         return this;
     }
 
-    @Step("Нажать на иконку \"Кредиты\"")
-    public MainPage clickOnTheCreditsIcon() {
-        htmlTagTitleCredits.shouldHave(size(1))
+    @Step("Нажать на иконку \"{value}\"")
+    public MainPage clickOnTheCreditsIcon(String value) {
+        htmlTagTitleCredits.filterBy(exactText(value))
+                .shouldHave(size(1))
                 .first()
                 .shouldBe(visible, Duration.ofSeconds(10))
                 .click();

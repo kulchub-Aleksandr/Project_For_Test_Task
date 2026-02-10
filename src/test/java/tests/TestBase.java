@@ -18,8 +18,8 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 public class TestBase {
 
     MainPage mainPage = new MainPage();
-    LoginPage  loginPage = new LoginPage();
-    CreditPage  creditPage = new CreditPage();
+    LoginPage loginPage = new LoginPage();
+    CreditPage creditPage = new CreditPage();
     OsagoPage osagoPage = new OsagoPage();
     FuelPage fuelPage = new FuelPage();
 

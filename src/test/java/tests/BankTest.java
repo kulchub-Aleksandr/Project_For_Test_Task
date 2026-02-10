@@ -11,7 +11,7 @@ public class BankTest extends TestBase {
         mainPage.openPage()
                 .hoverLoginButton()
                 .clickLoginFirstButton();
-        loginPage.checkFormTitleValue(testData.formTitle);
+        loginPage.checkFormTitleValue("Вход в Т‑Банк");
     }
 
     @DisplayName("Вход в личный кабинет банка, используя неполный номер телефона")
@@ -21,7 +21,7 @@ public class BankTest extends TestBase {
                 .hoverLoginButton()
                 .clickLoginFirstButton();
         loginPage.setPhone(testData.notFullUserNumber)
-                .checkServerErrorValue(testData.serverError);
+                .checkServerErrorValue("Введен неверный номер телефона");
 
     }
 
@@ -29,8 +29,8 @@ public class BankTest extends TestBase {
     @Test
     public void chooseCredit() {
         mainPage.openPage()
-                .clickOnTheCreditsIcon();
-        creditPage.checkCreditsTitleValue();
+                .clickOnTheCreditsIcon("Кредиты");
+        creditPage.checkCreditsTitleValue("Кредиты на любые цели");
 
     }
 
@@ -40,18 +40,17 @@ public class BankTest extends TestBase {
         mainPage.openPage()
                 .hoverOnTheIconPrivatePerson()
                 .clickOnTheOsagoIcon();
-        osagoPage.checkOsagoTitleValue();
+        osagoPage.checkOsagoTitleValue("Познакомьтесь со всеми обновлениями приложения ");
 
     }
 
     @DisplayName("Выбор страницы Топливо на веб-сайте банка")
     @Test
     public void fuelInBank() {
-
         mainPage.openPage()
                 .hoverOnTheIconPrivatePerson()
                 .clickOnTheFuelIcon();
-        fuelPage.checkFuelTitleValue();
+        fuelPage.checkFuelTitleValue("Топливо с кэшбэком до 7% в приложении Т‑Банка");
 
     }
 

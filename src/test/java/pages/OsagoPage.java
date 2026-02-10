@@ -9,11 +9,12 @@ import static com.codeborne.selenide.Selenide.$$;
 public class OsagoPage {
     private final ElementsCollection
             htmlTagTitleValueOsago = $$("[data-test='htmlTag title']")
-            .filterBy(text("Познакомьтесь со всеми обновлениями приложения "));
+            ;
 
-    @Step("Проверить появилась ли надпись \"Познакомьтесь со всеми обновлениями приложения\"")
-    public OsagoPage checkOsagoTitleValue() {
-        htmlTagTitleValueOsago.first()
+    @Step("Проверить появилась ли надпись \"{value}\"")
+    public OsagoPage checkOsagoTitleValue(String value) {
+        htmlTagTitleValueOsago.filterBy(text(value))
+                .first()
                 .shouldBe(visible);
         return this;
     }
