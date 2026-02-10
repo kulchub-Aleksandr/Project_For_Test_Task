@@ -18,10 +18,10 @@ import static com.codeborne.selenide.Selenide.*;
 public class MainPage {
     private final SelenideElement
             loginButton = $("[data-test='loginButton']"),
-            loginFirst = $("[data-test='clickableArea login-first']"),
+            loginFirst = $("[data-test='login-first-wrapper']"),
             menuItem0Title = $("[data-test='menu-item-0-title']"),
-            textItem_3_0 = $("[data-test='clickableArea text-item-3-0']"),
-            textItem_5_2 = $("[data-test='clickableArea text-item-5-2']");
+            textItem_3_0 = $("[data-test='text-item-3-0-text']"),
+            textItem_5_2 = $("[data-test='text-item-5-2-text']");
 
 
     private final ElementsCollection
