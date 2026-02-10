@@ -13,9 +13,9 @@ public class LoginPage {
             buttonSubmit = $("[automation-id='button-submit']"),
             serverError = $("[automation-id='server-error']");
 
-    @Step("Проверить появилась ли надпись \"Вход в Т‑Банк\"")
-    public LoginPage checkFormTitleValue() {
-        formTitle.shouldHave(text("Вход в Т‑Банк"));
+    @Step("Проверить появилась ли надпись \"{value}\"")
+    public LoginPage checkFormTitleValue(String value) {
+        formTitle.shouldHave(text(value));
         return this;
     }
 
@@ -26,9 +26,9 @@ public class LoginPage {
         return this;
     }
 
-    @Step("Проверить появилась ли надпись \"Введен неверный номер телефона\"")
-    public LoginPage checkServerErrorValue() {
-        serverError.shouldHave(text("Введен неверный номер телефона"));
+    @Step("Проверить появилась ли надпись \"{value}\"")
+    public LoginPage checkServerErrorValue(String value) {
+        serverError.shouldHave(text(value));
         return this;
     }
 

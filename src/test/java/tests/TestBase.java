@@ -2,6 +2,7 @@ package tests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import data.TestData;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
@@ -21,6 +22,7 @@ public class TestBase {
     CreditPage  creditPage = new CreditPage();
     OsagoPage osagoPage = new OsagoPage();
     FuelPage fuelPage = new FuelPage();
+
     TestData testData = new TestData();
 
     @BeforeAll
@@ -32,6 +34,7 @@ public class TestBase {
         String browserSize = System.getProperty("browserSize");
 
         Configuration.browserSize = browserSize;
+
         Configuration.baseUrl = baseUrl;
         Configuration.browser = browser;
         Configuration.browserVersion = browserVersion;
@@ -46,7 +49,6 @@ public class TestBase {
         ));
         Configuration.browserCapabilities = capabilities;
         Configuration.remote = remoteUrl;
-        //"https://user1:1234@selenoid.autotests.cloud/wd/hub";
     }
 
     @BeforeEach

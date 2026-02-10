@@ -11,7 +11,7 @@ public class BankTest extends TestBase {
         mainPage.openPage()
                 .hoverLoginButton()
                 .clickLoginFirstButton();
-        loginPage.checkFormTitleValue();
+        loginPage.checkFormTitleValue(testData.formTitle);
     }
 
     @DisplayName("Вход в личный кабинет банка, используя неполный номер телефона")
@@ -21,7 +21,7 @@ public class BankTest extends TestBase {
                 .hoverLoginButton()
                 .clickLoginFirstButton();
         loginPage.setPhone(testData.notFullUserNumber)
-                .checkServerErrorValue();
+                .checkServerErrorValue(testData.serverError);
 
     }
 
