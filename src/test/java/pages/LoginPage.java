@@ -13,9 +13,9 @@ public class LoginPage {
             buttonSubmit = $("[automation-id='button-submit']"),
             serverError = $("[automation-id='server-error']");
 
-    @Step("Проверить появилась ли надпись \"Вход в Т‑Банк\"")
+    @Step("Проверить появилась ли надпись \"Вход\"")
     public LoginPage checkFormTitleValue() {
-        formTitle.shouldHave(text("Вход в Т‑Банк"));
+        formTitle.shouldHave(text("Вход"));
         return this;
     }
 
