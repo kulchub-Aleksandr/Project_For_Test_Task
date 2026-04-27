@@ -18,7 +18,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class MainPage {
     private final SelenideElement
             loginButton = $("[data-qa-type='loginButton.content']"),
-            loginFirst = $("[data-test='clickableArea login-first']"),
+            loginFirst = $("[data-test='login-first-wrapper']"),
             menuItem0Title = $("[data-test='menu-item-0-title']"),
             textItem_3_0 = $("[data-test='text-item-3-0-text']"),
             textItem_5_2 = $("[data-test='text-item-5-2-text']");
