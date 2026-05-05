@@ -54,7 +54,7 @@ flowchart LR;
     
     C-->G(Allure_Report);
     
-    C-->F(Allure_TestOps);
+    C<==>F(Allure_TestOps);
     F-->J(Jira);
 
 ```
