@@ -27,12 +27,17 @@
 <img width="5%" title="Jira" src="images/logo/Jira.svg">
 </p>
 
+- В данном проекте реализованны автотесты на UI.
 - В данном проекте автотесты написаны на языке <code>Java</code> с использованием фреймворка для автоматизации тестирования веб‑приложений [Selenide](https://selenide.org/).
 - В качестве сборщика был использован - <code>Gradle</code>.
 - В качестве фреймворка модульного тестирования задействован <code>JUnit 5</code>.
+- `Page Object` шаблон проектирования.
+- Использована технология `Owner` для придания тестам гибкости и легкости конфигурации.
+- Использована библиотека `Faker` для генерации данных.
 - При прогоне тестов браузер запускается в [Selenoid](https://aerokube.com/selenoid/).
 - Для удаленного запуска реализована джоба в **Jenkins** с формированием Allure-отчета и отправкой результатов в **Telegram** при помощи бота.
 - Осуществлена интеграция с **Allure TestOps** и **Jira**
+- Реализована возможность запуска тестов непосредственно из **Allure TestOps** — как полного прогона, так и выборочного выполнения отдельных тестов.
 
 ### Реализована следующая схема взаимодействия технологий и инструментов
 
@@ -119,13 +124,18 @@ src="images/screen/JenkinsBuild_1.png">
 <img title="Test Results in Alure" src="images/screen/Allure_1.png">
 </p>
 
-### Графики
-
   <p align="center">  
 <img title="Allure Graphics" src="images/screen/Allure_2.png">
+</p>
+
+### Графики
 
 <p align="center">
 <img title="Allure Graphics" src="images/screen/Allure_3.png">  
+</p>
+
+<p align="center">
+<img title="Allure Graphics" src="images/screen/Allure_4.png">  
 </p>
 
 ## <img src="images/logo/AllureTestOps.svg" title="Allure TestOps" width="5%"/> Интеграция с [Allure TestOps](https://allure.autotests.cloud/project/5108/dashboards)
@@ -170,4 +180,3 @@ src="images/screen/JenkinsBuild_1.png">
 <p align="center">
   <img title="Selenoid Video" src="images/video/Video_MD.gif">
 </p>
-
