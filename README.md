@@ -1,7 +1,7 @@
 <p align="center">
 <img src="images/logo/T_BANK.svg" title="T BANK" width="15%"/>
 
-# <p align="center"> Проект по автоматизации тестовых сценариев для Т-Банка
+# <p align="center"> Проект по автоматизации тестовых сценариев для [Т-Банка](https://www.tbank.ru/)
 
 ## :card_index_dividers: Содержание:
 
