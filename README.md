@@ -93,7 +93,7 @@ test
 - <code>BASE_URL</code> – Url, по которому будет открываться тестируемое приложение.
 - <code>REMOTE_BROWSER_URL</code> – адрес удаленного сервера, на котором будут запускаться тесты.
 
-## <img src="images/logo/Jenkins.svg" title="Jenkins" width="5%"/> Сборка в [Jenkins](https://jenkins.autotests.cloud/view/java_students/job/C39_AleksKulch_lesson14_29.01.26_Test_Task/)
+## <img src="images/logo/Jenkins.svg" title="Jenkins" width="5%"/> Сборка в [Jenkins](https://jenkins.autotests.cloud/view/java_students/job/C39_AleksKulch_lesson14_29.01.26_Test_Task_Owner/)
 ### Главная страница
 <p align="center">
 <img title="Jenkins Build" 

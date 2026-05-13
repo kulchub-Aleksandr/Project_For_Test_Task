@@ -19,8 +19,8 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 public class TestBase {
 
     MainPage mainPage = new MainPage();
-    LoginPage  loginPage = new LoginPage();
-    CreditPage  creditPage = new CreditPage();
+    LoginPage loginPage = new LoginPage();
+    CreditPage creditPage = new CreditPage();
     OsagoPage osagoPage = new OsagoPage();
     FuelPage fuelPage = new FuelPage();
     TestData testData = new TestData();
@@ -29,12 +29,6 @@ public class TestBase {
 
     @BeforeAll
     static void beforeAll() {
-//        String browser = System.getProperty("browser", "chrome");
-//        String browserVersion = System.getProperty("browserVersion");
-//        String baseUrl = System.getProperty("baseUrl", "https://www.tbank.ru");
-//        String remoteUrl = System.getProperty("remoteUrl");
-//        String browserSize = System.getProperty("browserSize");
-
         Configuration.browserSize = webConfig.browserSize();
         Configuration.baseUrl = webConfig.baseUrl();
         Configuration.browser = webConfig.browser();
