@@ -32,4 +32,10 @@ public class LoginPage {
         return this;
     }
 
+    @Step("Проверить появилась ли надпись \"Некорректный номер телефона\"")
+    public LoginPage checkServerErrorValue2() {
+        serverError.shouldHave(text("Некорректный номер телефона"));
+        return this;
+    }
+
 }

@@ -13,6 +13,7 @@ public class CreditPage {
             .filterBy(exactText("Кредиты на любые цели"));
 
 
+
     @Step("Проверить появилась ли надпись \"Кредиты на любые цели\"")
     public CreditPage checkCreditsTitleValue() {
         htmlTagTitleValueCredits.first().shouldBe(visible);

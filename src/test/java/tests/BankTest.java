@@ -25,7 +25,17 @@ public class BankTest extends TestBase {
                 .clickLoginFirstButton();
         loginPage.setPhone(testData.notFullUserNumber)
                 .checkServerErrorValue();
+    }
 
+    @DisplayName("Вход в личный кабинет банка, используя некорректный номер телефона")
+    @Tag("UI")
+    @Test
+    public void loginInBankUseIncorrectPhoneNumberPhoneNumber() {
+        mainPage.openPage()
+                .hoverLoginButton()
+                .clickLoginFirstButton();
+        loginPage.setPhone(testData.incorrectPhoneNumber)
+                .checkServerErrorValue2();
     }
 
     @DisplayName("Выбор страницы кредита в банке")
@@ -45,22 +55,30 @@ public class BankTest extends TestBase {
         mainPage.openPage()
                 .hoverOnTheIconPrivatePerson()
                 .clickOnTheOsagoIcon();
-        osagoPage.checkOsagoTitleValue();
+        osagoPage.checkOsagoButtonTitleValue();
+    }
 
+    @DisplayName("Попытка рассчитать страховку ОСАГО без ввода номера автомашины")
+    @Tag("UI")
+    @Test
+    public void coverageInBankWithoutEnteringTheCarNumber() {
+        mainPage.openPage()
+                .hoverOnTheIconPrivatePerson()
+                .clickOnTheOsagoIcon();
+        osagoPage.checkOsagoButtonTitleValue()
+                .pressOsagoButton()
+                .checkErrorBlockValue();
     }
 
     @DisplayName("Выбор страницы Топливо на веб-сайте банка")
     @Tag("UI")
     @Test
     public void fuelInBank() {
-
         mainPage.openPage()
                 .hoverOnTheIconPrivatePerson()
                 .clickOnTheFuelIcon();
         fuelPage.checkFuelTitleValue();
-
     }
-
 
 }
 
