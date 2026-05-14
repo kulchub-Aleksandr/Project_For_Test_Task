@@ -19,7 +19,7 @@ public class LoginPage {
         return this;
     }
 
-    @Step("Ввести не полный номер телефона \"{value}\"")
+    @Step("Ввести номер телефона \"{value}\"")
     public LoginPage setPhone(String value) {
         phoneInput.setValue(value);
         buttonSubmit.click();

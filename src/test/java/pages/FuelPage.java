@@ -11,9 +11,9 @@ public class FuelPage {
 
     private final ElementsCollection
             htmlTagTitleValueFuel = $$("[data-test='htmlTag title']")
-            .filterBy(text("Топливо с кэшбэком до 7% в приложении Т‑Банка"));
+            .filterBy(text("Топливо с кэшбэком до 10% в приложении Т‑Банка"));
 
-    @Step("Проверить появилась ли надпись \"Топливо с кэшбэком до 7% в приложении Т‑Банка\"")
+    @Step("Проверить появилась ли надпись \"Топливо с кэшбэком до 10% в приложении Т‑Банка\"")
     public FuelPage checkFuelTitleValue() {
         htmlTagTitleValueFuel.first()
                 .shouldBe(visible);

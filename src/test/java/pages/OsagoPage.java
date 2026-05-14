@@ -24,7 +24,7 @@ public class OsagoPage {
         return this;
     }
 
-    @Step("Проверить появилась ли кнопка \"Рассчитать\"")
+    @Step("Нажать на кнопку \"Рассчитать\"")
     public OsagoPage pressOsagoButton() {
         iuKitButton.first()
                 .click();
