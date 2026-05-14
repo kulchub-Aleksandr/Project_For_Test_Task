@@ -106,7 +106,7 @@ test
 -DbaseUrl=${BASE_URL}
 -DbrowserSize=${BROWSER_SIZE}
 -Dbrowser=${BROWSER_NAME}
--Dbrowser_version="${BROWSER_VERSION}"
+-Dbrowser_version=${BROWSER_VERSION}
 ```
 
 ### Параметры сборки
@@ -130,7 +130,7 @@ src="images/screen/JenkinsBuild_0.png">
 src="images/screen/JenkinsBuild_1.png">
 </p>
 
-## <img src="images/logo/Allure_Report.svg" title="Allure Report" width="5%"/> Allure [Report](https://jenkins.autotests.cloud/job/C39_AleksKulch_lesson14_29.01.26_Test_Task_Owner/16/allure/)
+## <img src="images/logo/Allure_Report.svg" title="Allure Report" width="5%"/> Allure [Report](https://jenkins.autotests.cloud/job/C39_AleksKulch_lesson14_29.01.26_Test_Task_Owner/24/allure/)
 
 Содержание Allure-отчета:
 
